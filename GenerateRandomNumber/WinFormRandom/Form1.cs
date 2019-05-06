@@ -14,38 +14,63 @@ namespace WinFormRandom
     {
         List<int> rNumbers = new List<int>();       
         static int qt;
+        bool stop;
 
         public Form1()
         {
             InitializeComponent();
         }
 
+        private void EnableItem(bool isEnable)
+        {
+            tbMax.Enabled = isEnable;
+            tbMin.Enabled = isEnable;
+        }
+
         private void btnran_Click(object sender, EventArgs e)
         {
-            GenerateNumbersByOrder();
-            GenerateRandomNumbers();
+            EnableItem(false);
+
+            if (rNumbers.Count == 0 && !stop)
+            {
+                GenerateNumbersByOrder();
+                GenerateRandomNumbers();
+            }
+           
+            if(rNumbers.Count==0)
+            {
+                MessageBox.Show("亂數已經全部產生完");
+                stop = true;
+            }
+            else
+            {
+                listBoxResult.Items.Insert(0, rNumbers[0].ToString());
+                rNumbers.Remove(rNumbers[0]);
+                stop = true;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            qt = 10;           
+            qt = 10;
+            stop = false;
         }
 
         private void GenerateRandomNumbers()
         {
             Random random = new Random();
-            if (qt > 0)
+            for (int i = 0; i < qt; i++)
             {
                 int rOrder = random.Next(qt);
-
-                listBoxResult.Items.Insert(0, rNumbers[rOrder].ToString());
-                qt--;
-                rNumbers.Remove(rNumbers[rOrder]);
+                int temp;
+                temp = rNumbers[i];
+                rNumbers[i] = rNumbers[rOrder];
+                rNumbers[rOrder] = temp;               
             }
-            else
-            {
-                MessageBox.Show("亂數已經全部產生完");
-            }
+            //else
+            //{
+            //    MessageBox.Show("亂數已經全部產生完");
+            //}
         }
 
         private void GenerateNumbersByOrder()
@@ -58,23 +83,37 @@ namespace WinFormRandom
                 {
                     rNumbers.Add(i);
                 }
-            }
-
-          
+            }          
         }
 
-        private void shuffle()
-        {
-
-        }
 
         private void btnGenAll_Click(object sender, EventArgs e)
         {
-            GenerateNumbersByOrder();
-            while (qt > 0)
+            EnableItem(false);
+
+            if (rNumbers.Count == 0 && !stop)
             {
+                GenerateNumbersByOrder();
                 GenerateRandomNumbers();
             }
+
+            while(rNumbers.Count != 0)
+            {
+                listBoxResult.Items.Insert(0, rNumbers[0].ToString());
+                rNumbers.Remove(rNumbers[0]);
+            }
+
+            stop = true;
+            MessageBox.Show("亂數已經全部產生完");
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            qt = 10;
+            rNumbers.Clear();
+            listBoxResult.Items.Clear();
+            EnableItem(true);
+            stop = false;
         }
     }
 }
