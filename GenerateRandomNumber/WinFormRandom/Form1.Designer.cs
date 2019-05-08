@@ -36,12 +36,14 @@
             this.tbMax = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbrannumqt = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnran
             // 
-            this.btnran.Location = new System.Drawing.Point(40, 373);
-            this.btnran.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnran.Location = new System.Drawing.Point(56, 473);
+            this.btnran.Margin = new System.Windows.Forms.Padding(4);
             this.btnran.Name = "btnran";
             this.btnran.Size = new System.Drawing.Size(152, 29);
             this.btnran.TabIndex = 1;
@@ -55,15 +57,15 @@
             this.listBoxResult.FormattingEnabled = true;
             this.listBoxResult.ItemHeight = 34;
             this.listBoxResult.Location = new System.Drawing.Point(51, 37);
-            this.listBoxResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxResult.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxResult.Name = "listBoxResult";
-            this.listBoxResult.Size = new System.Drawing.Size(152, 276);
+            this.listBoxResult.Size = new System.Drawing.Size(152, 412);
             this.listBoxResult.TabIndex = 3;
             // 
             // btnGenAll
             // 
-            this.btnGenAll.Location = new System.Drawing.Point(257, 373);
-            this.btnGenAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGenAll.Location = new System.Drawing.Point(273, 473);
+            this.btnGenAll.Margin = new System.Windows.Forms.Padding(4);
             this.btnGenAll.Name = "btnGenAll";
             this.btnGenAll.Size = new System.Drawing.Size(152, 29);
             this.btnGenAll.TabIndex = 4;
@@ -73,7 +75,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(449, 376);
+            this.btnReset.Location = new System.Drawing.Point(465, 476);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(70, 23);
             this.btnReset.TabIndex = 5;
@@ -84,24 +86,26 @@
             // tbMin
             // 
             this.tbMin.Font = new System.Drawing.Font("新細明體", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tbMin.Location = new System.Drawing.Point(287, 88);
+            this.tbMin.Location = new System.Drawing.Point(306, 91);
             this.tbMin.Name = "tbMin";
             this.tbMin.Size = new System.Drawing.Size(159, 64);
             this.tbMin.TabIndex = 6;
+            this.tbMin.Text = "1";
             // 
             // tbMax
             // 
             this.tbMax.Font = new System.Drawing.Font("新細明體", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tbMax.Location = new System.Drawing.Point(287, 233);
+            this.tbMax.Location = new System.Drawing.Point(306, 236);
             this.tbMax.Name = "tbMax";
             this.tbMax.Size = new System.Drawing.Size(159, 64);
             this.tbMax.TabIndex = 7;
+            this.tbMax.Text = "10";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("新細明體", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(265, 37);
+            this.label1.Location = new System.Drawing.Point(284, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(212, 48);
             this.label1.TabIndex = 8;
@@ -111,17 +115,39 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("新細明體", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(265, 166);
+            this.label2.Location = new System.Drawing.Point(284, 169);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(212, 48);
             this.label2.TabIndex = 9;
             this.label2.Text = "最大數字";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("新細明體", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.Location = new System.Drawing.Point(237, 315);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(308, 48);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "剩餘亂數數量";
+            // 
+            // lbrannumqt
+            // 
+            this.lbrannumqt.AutoSize = true;
+            this.lbrannumqt.Font = new System.Drawing.Font("微軟正黑體", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbrannumqt.Location = new System.Drawing.Point(367, 383);
+            this.lbrannumqt.Name = "lbrannumqt";
+            this.lbrannumqt.Size = new System.Drawing.Size(39, 43);
+            this.lbrannumqt.TabIndex = 10;
+            this.lbrannumqt.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 445);
+            this.ClientSize = new System.Drawing.Size(615, 515);
+            this.Controls.Add(this.lbrannumqt);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbMax);
@@ -130,7 +156,7 @@
             this.Controls.Add(this.btnGenAll);
             this.Controls.Add(this.listBoxResult);
             this.Controls.Add(this.btnran);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "亂數產生器";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -148,6 +174,8 @@
         private System.Windows.Forms.TextBox tbMax;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbrannumqt;
     }
 }
 

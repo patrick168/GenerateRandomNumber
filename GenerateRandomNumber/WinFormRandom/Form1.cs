@@ -32,13 +32,13 @@ namespace WinFormRandom
         private bool InputError()
         {
             minNum = 0; maxNum = 0;
-            bool minTryParsel, maxTryParse;
+            bool minTryParse, maxTryParse;
 
             try
             {
-                minTryParsel = Int32.TryParse(tbMin.Text, out minNum);
+                minTryParse = Int32.TryParse(tbMin.Text, out minNum);
                 maxTryParse = Int32.TryParse(tbMax.Text, out maxNum);
-                if (!minTryParsel || minNum < 0)
+                if (!minTryParse || minNum < 0)
                 {
                     minNum = -1;
                 }
@@ -78,10 +78,10 @@ namespace WinFormRandom
             EnableItem(false);
             qt = maxNum - minNum + 1;
 
-            if (rNumbers.Count == 0 && !stop)
+            if (rNumbers.Count == 0 && !stop) //一開始狀態還沒產生亂數時
             {
                 GenerateNumbersByOrder();
-                GenerateRandomNumbers();
+                GenerateRandomNumbers();                
             }
            
             if(rNumbers.Count==0)
@@ -93,13 +93,15 @@ namespace WinFormRandom
             {
                 listBoxResult.Items.Insert(0, rNumbers[0].ToString());
                 rNumbers.Remove(rNumbers[0]);
-                stop = true;
+                stop = true;                
             }
+            lbrannumqt.Text = rNumbers.Count.ToString();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            qt = 10;
+            qt = 0;
+            lbrannumqt.Text = "";
             stop = false;
         }
 
@@ -119,7 +121,7 @@ namespace WinFormRandom
 
         private void GenerateNumbersByOrder()
         {
-            int i;            
+            int i;           
 
             if (rNumbers.Count == 0)
             {
@@ -153,6 +155,7 @@ namespace WinFormRandom
                 rNumbers.Remove(rNumbers[0]);
             }
 
+            lbrannumqt.Text = "0";
             stop = true;
             MessageBox.Show("亂數已經全部產生完");
         }
