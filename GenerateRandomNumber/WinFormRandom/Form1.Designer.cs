@@ -42,10 +42,11 @@
             // 
             // btnran
             // 
-            this.btnran.Location = new System.Drawing.Point(56, 473);
+            this.btnran.Font = new System.Drawing.Font("標楷體", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnran.Location = new System.Drawing.Point(51, 473);
             this.btnran.Margin = new System.Windows.Forms.Padding(4);
             this.btnran.Name = "btnran";
-            this.btnran.Size = new System.Drawing.Size(152, 29);
+            this.btnran.Size = new System.Drawing.Size(203, 50);
             this.btnran.TabIndex = 1;
             this.btnran.Text = "產生一個亂數";
             this.btnran.UseVisualStyleBackColor = true;
@@ -64,10 +65,11 @@
             // 
             // btnGenAll
             // 
-            this.btnGenAll.Location = new System.Drawing.Point(273, 473);
+            this.btnGenAll.Font = new System.Drawing.Font("標楷體", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnGenAll.Location = new System.Drawing.Point(262, 473);
             this.btnGenAll.Margin = new System.Windows.Forms.Padding(4);
             this.btnGenAll.Name = "btnGenAll";
-            this.btnGenAll.Size = new System.Drawing.Size(152, 29);
+            this.btnGenAll.Size = new System.Drawing.Size(203, 50);
             this.btnGenAll.TabIndex = 4;
             this.btnGenAll.Text = "產生所有亂數";
             this.btnGenAll.UseVisualStyleBackColor = true;
@@ -75,9 +77,10 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(465, 476);
+            this.btnReset.Font = new System.Drawing.Font("標楷體", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnReset.Location = new System.Drawing.Point(472, 473);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(70, 23);
+            this.btnReset.Size = new System.Drawing.Size(110, 50);
             this.btnReset.TabIndex = 5;
             this.btnReset.Text = "重置";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -86,7 +89,7 @@
             // tbMin
             // 
             this.tbMin.Font = new System.Drawing.Font("新細明體", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tbMin.Location = new System.Drawing.Point(306, 91);
+            this.tbMin.Location = new System.Drawing.Point(306, 100);
             this.tbMin.Name = "tbMin";
             this.tbMin.Size = new System.Drawing.Size(159, 64);
             this.tbMin.TabIndex = 6;
@@ -95,7 +98,7 @@
             // tbMax
             // 
             this.tbMax.Font = new System.Drawing.Font("新細明體", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tbMax.Location = new System.Drawing.Point(306, 236);
+            this.tbMax.Location = new System.Drawing.Point(306, 253);
             this.tbMax.Name = "tbMax";
             this.tbMax.Size = new System.Drawing.Size(159, 64);
             this.tbMax.TabIndex = 7;
@@ -115,7 +118,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("新細明體", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(284, 169);
+            this.label2.Location = new System.Drawing.Point(284, 193);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(212, 48);
             this.label2.TabIndex = 9;
@@ -125,7 +128,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("新細明體", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label3.Location = new System.Drawing.Point(237, 315);
+            this.label3.Location = new System.Drawing.Point(238, 342);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(308, 48);
             this.label3.TabIndex = 9;
@@ -135,9 +138,9 @@
             // 
             this.lbrannumqt.AutoSize = true;
             this.lbrannumqt.Font = new System.Drawing.Font("微軟正黑體", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lbrannumqt.Location = new System.Drawing.Point(367, 383);
+            this.lbrannumqt.Location = new System.Drawing.Point(299, 407);
             this.lbrannumqt.Name = "lbrannumqt";
-            this.lbrannumqt.Size = new System.Drawing.Size(39, 43);
+            this.lbrannumqt.Size = new System.Drawing.Size(37, 42);
             this.lbrannumqt.TabIndex = 10;
             this.lbrannumqt.Text = "0";
             // 
@@ -145,7 +148,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 515);
+            this.ClientSize = new System.Drawing.Size(619, 593);
             this.Controls.Add(this.lbrannumqt);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

@@ -1,20 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 
 namespace WinFormRandom
 {
     public partial class Form1 : Form
     {
         List<int> rNumbers = new List<int>();       
-        static int qt;
+        int qt;
         bool stop;
         int minNum, maxNum;
 
@@ -23,12 +16,14 @@ namespace WinFormRandom
             InitializeComponent();
         }
 
+        //元件是否Enable的設定
         private void EnableItem(bool isEnable)
         {
             tbMax.Enabled = isEnable;
             tbMin.Enabled = isEnable;
         }
 
+        //確認是否輸入錯誤
         private bool InputError()
         {
             minNum = 0; maxNum = 0;
@@ -67,22 +62,12 @@ namespace WinFormRandom
             return false;
         }
 
+        //產生一個亂數
         private void btnran_Click(object sender, EventArgs e)
         {
-            if (rNumbers.Count == 0)
-            {
-                if (InputError())
-                    return;
-            }
+            startRandom();
 
-            EnableItem(false);
-            qt = maxNum - minNum + 1;
-
-            if (rNumbers.Count == 0 && !stop) //一開始狀態還沒產生亂數時
-            {
-                GenerateNumbersByOrder();
-                GenerateRandomNumbers();                
-            }
+        
            
             if(rNumbers.Count==0)
             {
@@ -98,6 +83,7 @@ namespace WinFormRandom
             lbrannumqt.Text = rNumbers.Count.ToString();
         }
 
+        //初始狀態時做一些初始狀態的設定
         private void Form1_Load(object sender, EventArgs e)
         {
             qt = 0;
@@ -105,6 +91,7 @@ namespace WinFormRandom
             stop = false;
         }
 
+        //產生亂數，洗牌
         private void GenerateRandomNumbers()
         {
             Random random = new Random();
@@ -119,6 +106,7 @@ namespace WinFormRandom
             }          
         }
 
+        //產生亂數的序號
         private void GenerateNumbersByOrder()
         {
             int i;           
@@ -132,23 +120,11 @@ namespace WinFormRandom
             }          
         }
 
+        //產生所有亂數
         private void btnGenAll_Click(object sender, EventArgs e)
         {
-            if (rNumbers.Count == 0)
-            {
-                if (InputError())
-                    return;
-            }
-
-            EnableItem(false);
-            qt = maxNum - minNum + 1;
-
-            if (rNumbers.Count == 0 && !stop)
-            {
-                GenerateNumbersByOrder();
-                GenerateRandomNumbers();
-            }
-
+            startRandom();
+            
             while(rNumbers.Count != 0)
             {
                 listBoxResult.Items.Insert(0, rNumbers[0].ToString());
@@ -160,8 +136,30 @@ namespace WinFormRandom
             MessageBox.Show("亂數已經全部產生完");
         }
 
+        private void startRandom()
+        {
+            if (rNumbers.Count == 0)
+            {
+                if (InputError())
+                    return;
+            }
+
+            EnableItem(false);
+            qt = maxNum - minNum + 1;
+
+            if (rNumbers.Count == 0 && !stop) //一開始狀態還沒產生亂數時建立好亂數
+            {
+                GenerateNumbersByOrder();
+                GenerateRandomNumbers();
+            }
+        }
+
+        //按下重置，清空已產生的亂數
         private void btnReset_Click(object sender, EventArgs e)
         {
+            tbMin.Text = "1";
+            tbMax.Text = "10";
+            lbrannumqt.Text = "";
             qt = 0;
             rNumbers.Clear();
             listBoxResult.Items.Clear();
